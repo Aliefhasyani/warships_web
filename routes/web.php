@@ -7,3 +7,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/',[MainController::class, 'home']);
 
+Route::get('/createWarships',[AddWarshipsController::class, 'create']);
+Route::post('/createWarships/post',[AddWarshipsController::class, 'store'])->name('warships.post');
+Route::get('/warships',[AddWarshipsController::class, 'warships']);

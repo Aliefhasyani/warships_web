@@ -8,4 +8,5 @@ class Warships extends Model
 {
     //
     protected $table = 'warships';
-}
+    protected $fillable = ['name','country','type'];
+}   
