@@ -12,17 +12,21 @@
         <th scope="col">NAME</th>
         <th scope="col">COUNTRY</th>
         <th scope="col">TYPE</th>
+        <th scope="col">ACTION</th>
       </tr>
     </thead>
     @foreach ($warships as $value)
     <tbody>
       <tr>
-        <th scope="row"></th>
         <td>{{$value->id}}</td>
         <td>{{$value->name}}</td>
         <td>{{$value->country}}</td>
         <td>{{$value->type}}</td>
+        <td><button><a href="{{route('warships.edit',$value->id)}}">EDIT</a></button></td>
       </tr>
     </tbody>
     @endforeach
+
+  
   </table>
+  <button><a href="{{route('warships.create')}}">ADD A WARSHIP</a></button>
