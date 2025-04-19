@@ -12,5 +12,6 @@ Route::post('/createWarships/post',[AddWarshipsController::class, 'store'])->nam
 
 Route::get('/warships',[AddWarshipsController::class, 'warships'])->name('warships.list');
 
-Route::get('/edit/warships/{id}',[AddWarshipsController::class, 'edit'])->name('warships.edit');
-Route::put('/update/warships/{id}',[AddWarshipsController::class, 'update'])->name('warships.update');
+Route::get('/warship/edit/{id}', [AddWarshipsController::class, 'edit'])->name('warships.edit');
+Route::put('/warship/edit/update/{id}', [AddWarshipsController::class, 'update'])->name('warships.update');
+

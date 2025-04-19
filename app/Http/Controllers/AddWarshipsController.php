@@ -33,22 +33,27 @@ class AddWarshipsController extends Controller
 
     public function edit($id){
         $warships = Warships::findOrFail($id);
-        
-        return view('editWarships', compact('warships'));
+
+        return view('editWarships',compact('warships'));
     }
-    
+
     public function update(Request $request, $id){
-        $warship = Warships::findOrFail($id);
-        
+        $warships = Warships::findOrFail($id);
+
         $validate = $request->validate([
             'name' => 'required|string|max:225',
             'country' => 'required|string|max:225',
             'type' => 'required|in:battleship,cruiser,destroyer,aircraftCarrier'    
         ]);
 
-       
-        $warship->update($validate);
+        $warships->update($validate);
         
         return redirect()->route('warships.list');
     }
+
+
+
+
+
+    
 }
