@@ -16,5 +16,21 @@
         <option value="aircraftCarrier">Aircraft Carrier</option>
     </select>
 
-    <button type="submit">Create</button>
+    
+    <label for="type">Main Armaments:</label>
+    <select name="mainarmaments" required>
+        <option value="120mm">120mm</option>
+        <option value="127mm">127mm</option>
+        <option value="130mm">130mm</option>
+        <option value="152mm">152mm</option>
+        <option value="203mm">203mm</option>
+        <option value="280mm">280mm</option>
+        <option value="320mm">320mm</option>
+        <option value="356mm">356mm</option>
+        <option value="381mm">381mm</option>
+        <option value="406mm">406mm</option>
+        <option value="460mm">460mm</option>
+    </select>
+
+    <button type="submit">Add Warship</button>
 </form>

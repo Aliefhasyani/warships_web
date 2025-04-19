@@ -17,7 +17,8 @@ class AddWarshipsController extends Controller
         $validate = $request->validate([
             'name' => 'required|string|max:225',
             'country' => 'required|string|max:225',
-            'type' => 'required|in:battleship,cruiser,destroyer,aircraftCarrier'    
+            'type' => 'required|in:battleship,cruiser,destroyer,aircraftCarrier',   
+            'mainarmaments' => 'required|in:120mm,127mm,130mm,152mm,203mm,280mm,320mm,356mm,381mm,406mm,460mm'   
         ]);
         
         Warships::create($validate);
@@ -43,7 +44,8 @@ class AddWarshipsController extends Controller
         $validate = $request->validate([
             'name' => 'required|string|max:225',
             'country' => 'required|string|max:225',
-            'type' => 'required|in:battleship,cruiser,destroyer,aircraftCarrier'    
+            'type' => 'required|in:battleship,cruiser,destroyer,aircraftCarrier',   
+            'mainarmaments' => 'required|in:120mm,127mm,130mm,152mm,203mm,280mm,320mm,356mm,381mm,406mm,460mm'    
         ]);
 
         $warships->update($validate);
