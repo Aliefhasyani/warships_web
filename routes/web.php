@@ -15,3 +15,5 @@ Route::get('/warships',[AddWarshipsController::class, 'warships'])->name('warshi
 Route::get('/warship/edit/{id}', [AddWarshipsController::class, 'edit'])->name('warships.edit');
 Route::put('/warship/edit/update/{id}', [AddWarshipsController::class, 'update'])->name('warships.update');
 
+Route::delete('/warships/delete/{id}', [AddWarshipsController::class, 'destroy'])->name('warships.delete');
+

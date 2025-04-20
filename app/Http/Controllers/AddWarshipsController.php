@@ -53,6 +53,17 @@ class AddWarshipsController extends Controller
         return redirect()->route('warships.list');
     }
 
+    function destroy($id){
+        
+        $warships = Warships::findOrFail($id);
+
+        $warships->delete();
+
+        return redirect()->route('warships.list');
+    }
+
+
+
 
 
 

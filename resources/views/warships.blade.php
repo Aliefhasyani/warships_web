@@ -2,16 +2,16 @@
 
 
 
-<table class="table">
+
+<table class="table" >
     
         
    
     <thead>
       <tr>
-        <th scope="col">ID</th>
         <th scope="col">NAME</th>
-        <th scope="col">COUNTRY</th>
         <th scope="col">TYPE</th>
+        <th scope="col">COUNTRY</th>
         <th scope="col">MAIN ARMAMENTS</th>
         <th scope="col">ACTION</th>
       </tr>
@@ -19,12 +19,26 @@
     @foreach ($warships as $value)
     <tbody>
       <tr>
-        <td>{{$value->id}}</td>
+        
         <td>{{$value->name}}</td>
-        <td>{{$value->country}}</td>
         <td>{{$value->type}}</td>
+        <td>{{$value->country}}</td>
         <td>{{$value->mainarmaments}}</td>
-        <td><button><a href="{{route('warships.edit',$value->id)}}">EDIT</a></button></td>
+        <td>
+          
+          <form action="{{route('warships.edit',$value->id)}}">
+            @csrf
+            <button>EDIT</a></button>
+          </form>
+         
+          <form action="{{route('warships.delete',$value->id)}}" method="POST" onsubmit="return onDelete()">
+            @csrf
+            @method('DELETE')
+            <button>DELETE</button>
+          </form>
+        
+        </td>
+      
       </tr>
     </tbody>
     @endforeach
