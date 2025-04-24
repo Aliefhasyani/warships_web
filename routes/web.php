@@ -5,7 +5,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\MainController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/',[MainController::class, 'home']);
+Route::get('/',[MainController::class, 'home'])->name('home');
 
 Route::get('/createWarships',[AddWarshipsController::class, 'create'])->name('warships.create');
 Route::post('/createWarships/post',[AddWarshipsController::class, 'store'])->name('warships.post');

@@ -1,3 +1,7 @@
+@extends('layout.layout')
+
+
+@section('content')
 <strong><h1>WELCOME TO EDIT PAGE</h1></strong>
 
 <form action="{{route('warships.update',$warships->id)}}" method="POST">
@@ -35,3 +39,4 @@
 
     <button type="submit">Update</button>
 </form>
+@endsection

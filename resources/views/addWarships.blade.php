@@ -1,3 +1,6 @@
+@extends('layout.layout')
+
+@section('content')
 <strong><h1>WELCOME TO CREATE PAGE</h1></strong>
 
 <form action="{{route('warships.post')}}" method="POST">
@@ -34,3 +37,4 @@
 
     <button type="submit">Add Warship</button>
 </form>
+@endsection
