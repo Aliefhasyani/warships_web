@@ -1,0 +1,17 @@
+.nav{
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+
+    
+}
+
+.nav a{
+    color: red;
+    font-size: 20px;
+    padding: 15px;
+    
+}
+.nav a:hover{
+   text-decoration: none;
+}

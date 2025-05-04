@@ -11,9 +11,12 @@ Route::get('/createWarships',[AddWarshipsController::class, 'create'])->name('wa
 Route::post('/createWarships/post',[AddWarshipsController::class, 'store'])->name('warships.post');
 
 Route::get('/warships',[AddWarshipsController::class, 'warships'])->name('warships.list');
+Route::get('/warships/search',[AddWarshipsController::class, 'search'])->name('warships.search');
+
 
 Route::get('/warship/edit/{id}', [AddWarshipsController::class, 'edit'])->name('warships.edit');
 Route::put('/warship/edit/update/{id}', [AddWarshipsController::class, 'update'])->name('warships.update');
 
 Route::delete('/warships/delete/{id}', [AddWarshipsController::class, 'destroy'])->name('warships.delete');
+
 

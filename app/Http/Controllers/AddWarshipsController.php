@@ -8,11 +8,12 @@ use Illuminate\Http\Request;
 class AddWarshipsController extends Controller
 {
 
- 
+    //show create form
     public function create(){
         return view('addWarships');
     }
 
+    //logic for updating form
     public function store(Request $request){
         $validate = $request->validate([
             'name' => 'required|string|max:225',
@@ -26,18 +27,35 @@ class AddWarshipsController extends Controller
         return redirect()->route('warships.list');
     }
 
-    public function warships(){
+    //show warships list
+    public function warships(Request $request){
         $warships = Warships::all();
+      
 
         return view('warships',compact('warships'));
     }
 
+    //search func
+    public function search(Request $request) {
+        $search = $request->search;
+    
+        $warships = Warships::where('name', 'like', '%'.$search.'%')
+                    ->orWhere('type', 'like', '%'.$search.'%')
+                    ->orWhere('country', 'like', '%'.$search.'%')
+                    ->orWhere('mainarmaments', 'like', '%'.$search.'%')
+                    ->get();
+    
+        return view('warships', compact('search', 'warships'));
+    }
+
+    //show edit form
     public function edit($id){
         $warships = Warships::findOrFail($id);
 
         return view('editWarships',compact('warships'));
     }
 
+    //logic for updating warships
     public function update(Request $request, $id){
         $warships = Warships::findOrFail($id);
 
@@ -53,6 +71,7 @@ class AddWarshipsController extends Controller
         return redirect()->route('warships.list');
     }
 
+    //delete a warship
     function destroy($id){
         
         $warships = Warships::findOrFail($id);
