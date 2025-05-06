@@ -1,17 +1,25 @@
-.nav{
+
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.nav {
+    background-color: #333;
     display: flex;
-    gap: 15px;
-    justify-content: center;
-
-    
+    justify-content: space-around;
+    align-items: center;
+    height: 60px;
 }
-
 .nav a{
-    color: red;
-    font-size: 20px;
-    padding: 15px;
+    color: white;
+    text-decoration: none;
+}
+
+.nav a:hover {
+    color: blue;
+    text-decoration: none;
+
+}
     
-}
-.nav a:hover{
-   text-decoration: none;
-}

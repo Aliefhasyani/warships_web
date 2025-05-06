@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Warships;
 use Illuminate\Http\Request;
 
+use function Laravel\Prompts\search;
+
 class AddWarshipsController extends Controller
 {
 
@@ -15,16 +17,15 @@ class AddWarshipsController extends Controller
 
     //logic for updating form
     public function store(Request $request){
-        $validate = $request->validate([
-            'name' => 'required|string|max:225',
-            'country' => 'required|string|max:225',
-            'type' => 'required|in:battleship,cruiser,destroyer,aircraftCarrier',   
-            'mainarmaments' => 'required|in:120mm,127mm,130mm,152mm,203mm,280mm,320mm,356mm,381mm,406mm,460mm'   
-        ]);
-        
-        Warships::create($validate);
+       $warships = $request->validate([
+        'name' => 'required|string|max:255',
+        'country' => 'required|string|max:255',
+        'mainarmaments' => 'required|in:120mm,127mm,130mm,152mm,203mm,280mm,320mm,356mm,381mm,406mm,460mm',
+        'type' => 'required|in:battleship,cruiser,destroyer,aircraftCarrier'
+       ]);
 
-        return redirect()->route('warships.list');
+       Warships::create($warships);
+       return redirect()->route('warships.list');
     }
 
     //show warships list
@@ -38,14 +39,12 @@ class AddWarshipsController extends Controller
     //search func
     public function search(Request $request) {
         $search = $request->search;
-    
-        $warships = Warships::where('name', 'like', '%'.$search.'%')
-                    ->orWhere('type', 'like', '%'.$search.'%')
-                    ->orWhere('country', 'like', '%'.$search.'%')
-                    ->orWhere('mainarmaments', 'like', '%'.$search.'%')
-                    ->get();
-    
-        return view('warships', compact('search', 'warships'));
+        
+        $warships = Warships::where('name','like','%'.$search.'%')->
+                            orWhere('type','like','%'.$search.'%')->
+                            orWhere('mainarmaments','like','%'.$search.'%')->
+                            orWhere('country','like','%'.$search.'%')->get();
+        return view('warships',compact('warships'));
     }
 
     //show edit form
