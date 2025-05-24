@@ -19,4 +19,8 @@ Route::put('/warship/edit/update/{id}', [AddWarshipsController::class, 'update']
 
 Route::delete('/warships/delete/{id}', [AddWarshipsController::class, 'destroy'])->name('warships.delete');
 
+Route::get('/calculate',[MainController::class, 'showForm'])->name('show.form');
+Route::post('/calculate',[MainController::class, 'calculate'])->name('calculate');
+
+
 

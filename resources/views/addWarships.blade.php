@@ -7,9 +7,9 @@
 </head>
 
 <div class="form-container">
-    <form action="{{route('warships.create')}}" method="POST">
+    <form action="{{route('warships.post')}}" method="POST">
         @csrf
-        @method('PUT')
+    
     
         <label for="name">Name:</label>
         <input type="text" name="name" required >
@@ -41,7 +41,7 @@
         </select>
         
 
-        <button type="submit">Update</button>
+        <button type="submit" class="btn btn-secondary btn-sm mt-4 rounded">Add Warship</button>
     </form>
 </div>
 @endsection

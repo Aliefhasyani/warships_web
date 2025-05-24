@@ -17,10 +17,10 @@
 
         <label for="type">Type:</label>
         <select name="type" required>
-            <option value="battleship" {{ $warships->type == 'battleship' ? 'selected' : '' }}>Battleship</option>
-            <option value="cruiser" {{ $warships->type == 'cruiser' ? 'selected' : '' }}>Cruiser</option>
-            <option value="destroyer" {{ $warships->type == 'destroyer' ? 'selected' : '' }}>Destroyer</option>
-            <option value="aircraftCarrier" {{ $warships->type == 'aircraftCarrier' ? 'selected' : '' }}>Aircraft Carrier</option>
+            <option value="battleship" {{ $warships->type == 'Battleship' ? 'selected' : '' }}>Battleship</option>
+            <option value="cruiser" {{ $warships->type == 'Cruiser' ? 'selected' : '' }}>Cruiser</option>
+            <option value="destroyer" {{ $warships->type == 'Destroyer' ? 'selected' : '' }}>Destroyer</option>
+            <option value="aircraftCarrier" {{ $warships->type == 'AircraftCarrier' ? 'selected' : '' }}>Aircraft Carrier</option>
         </select>
 
         <label for="mainarmaments">Main Armaments:</label>
@@ -39,7 +39,7 @@
         </select>
         
 
-        <button type="submit">Update</button>
+        <button type="submit" class="btn btn-secondary mt-4 rounded">Update</button>
     </form>
 </div>
 @endsection
