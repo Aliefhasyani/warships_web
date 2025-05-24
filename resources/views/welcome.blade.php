@@ -25,7 +25,9 @@
                         <div class="card-body">
                             <h5 class="card-title">{{ $ships->name }}</h5> 
                             <p><i>{{$ships->country}}</i></p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                            <form action="{{route('warship.show',$ships->id)}}">
+                            <button type="submit" class="btn btn-primary">Ship Detail</button>
+                            </form>
                         </div>
                     </div>
                 </div>

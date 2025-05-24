@@ -23,4 +23,10 @@ Route::get('/calculate',[MainController::class, 'showForm'])->name('show.form');
 Route::post('/calculate',[MainController::class, 'calculate'])->name('calculate');
 
 
+Route::get('/warship/{id}',[MainController::class,'showWarship'])->name('warship.get');
+Route::post('/warship/{id}',[MainController::class,'showWarship'])->name('warship.show');
+
+
+
+
 

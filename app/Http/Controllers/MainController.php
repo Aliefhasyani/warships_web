@@ -42,6 +42,12 @@ class MainController extends Controller
        
 
     }
+
+    public function showWarship($id){
+        $warship = Warships::findOrFail($id);
+
+        return view('detailShip',compact('warship'));
+    }
 }
 
 
