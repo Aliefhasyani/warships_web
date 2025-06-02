@@ -24,6 +24,10 @@ select{
     gap:10px;
     margin-right: 10px;
 }
+.header-font{
+    display: flex;
+    justify-content: center;
+}
 
 
 

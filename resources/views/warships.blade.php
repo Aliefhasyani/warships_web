@@ -5,20 +5,27 @@
 @section('content')
 
 <head>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/addPage.css') }}">
 </head>
 
 <div class="container mt-4">
 
 
-    <div class="row mb-3">
-        <div class="col-md-6">
-            <form action="{{ route('warships.search') }}" method="GET" class="form-inline">
-                <input type="search" name="search" class="form-control mr-2" placeholder="Search a Warship...">
-                <button type="submit" class="btn btn-primary">Search</button>
-            </form>
-        </div>
+   <div class="row mb-3">
+    <div class="col-md-6">
+        <form action="{{ route('warships.search') }}" method="GET" class="form-inline">
+            <input type="search" name="search" class="form-control mr-2" placeholder="Search a Warship...">
+            <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+
+        @if(request()->has('search'))
+            <p><strong>Search Result For: {{$search}}</strong></p>
+        @endif
     </div>
+</div>
+
 
 
     <table class="table table-bordered table-striped">
@@ -61,7 +68,10 @@
     <form action="{{ route('warships.create') }}">
         <button type="submit" class="btn btn-primary">Add A Warship</button>
     </form>
+    
+  
 
 </div>
+
 
 @endsection

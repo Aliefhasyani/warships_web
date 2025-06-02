@@ -4,9 +4,12 @@
 @section('content')
 <head>
     <link rel="stylesheet" href="{{ asset('css/addPage.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
-
+<div class="header-font mt-3">
+    <h1>ADD FORM</h1>
+</div> 
 <div class="form-container">
     <form action="{{route('warships.post')}}" method="POST">
         @csrf
@@ -45,5 +48,9 @@
         </div>
     <button type="submit" class="btn btn-primary btn-sm"> Add Warship</button>
     </form>
+
+
 </div>
+
+
 @endsection

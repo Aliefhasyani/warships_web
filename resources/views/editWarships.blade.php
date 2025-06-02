@@ -5,9 +5,11 @@
 <head>
     <link rel="stylesheet" href="{{ asset('css/addPage.css') }}">
 </head>
-
-
+<div class="header-font mt-3">
+    <h1>EDIT FORM</h1>
+</div> 
 <div class="form-container">
+    
     <form action="{{route('warships.update',$warships->id)}}" method="POST">
         @csrf
         @method('PUT')
@@ -44,7 +46,7 @@
                 <option value="aircraftCarrier" >Aircraft Carrier</option>
             </select>
         </div>
-    <button type="submit" class="btn btn-primary btn-sm"> Add Warship</button>
+    <button type="submit" class="btn btn-primary btn-sm"> Edit Warship</button>
     </form>
 </div>
 @endsection

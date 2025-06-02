@@ -15,7 +15,7 @@ class AddWarshipsController extends Controller
         return view('addWarships');
     }
 
-    //logic for updating form
+    //logic for create form
     public function store(Request $request){
        $warships = $request->validate([
         'name' => 'required|string|max:255',
@@ -44,7 +44,7 @@ class AddWarshipsController extends Controller
                             orWhere('type','like','%'.$search.'%')->
                             orWhere('mainarmaments','like','%'.$search.'%')->
                             orWhere('country','like','%'.$search.'%')->get();
-        return view('warships',compact('warships'));
+        return view('warships',compact('warships','search'));
     }
 
     //show edit form
